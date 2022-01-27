@@ -1,0 +1,57 @@
+<div class="row" style="overflow: auto;">
+    <mat-toolbar>
+        <mat-toolbar-row>
+            <span style="margin-left: 1rem">Welcome {{user}}</span>
+            <span class="example-spacer"></span>
+        </mat-toolbar-row>
+    </mat-toolbar>
+    <div style="background-color:#e9ecef">
+        <div class="row">
+            <div class="col-12 ; headText">
+                <h1>Appointment Scheduler
+                    <mat-icon>event_available</mat-icon>
+                </h1>
+                <hr>
+            </div>
+        </div>
+        <div class="col-12 ; headText1">
+            <h3>Tap or click on an available timeslot below to book an appointment.</h3>
+        </div>
+    </div>
+    <div class="mainBody" *ngFor="let item of timeArray;let ind=index">
+        <mat-card id="slit-{{ind}}" class="matClass">
+            <mat-card-title>Time Slot {{ind+1}} </mat-card-title>
+            <mat-card-subtitle>{{item.value}}
+                <button mat-raised-button [ngClass]="item.isBooked == true ? 'bookBtn1' : 'bookBtn'"
+                    (click)="onNext(ind);openPopup(detailsPop,ind)">
+                    {{item.isBooked ? "Update Slot" : "Book Slot"}} </button>
+            </mat-card-subtitle>
+        </mat-card>
+    </div>
+</div>
+<form [formGroup]="form">
+<ng-template #detailsPop let-c="close">
+    <div class="model-header">
+        <h4>
+            Please Add Your Details.
+        </h4>
+    </div>
+    <div class="modal-body">
+        <div class="row">
+            <mat-form-field appearance="fill">
+                <mat-label>Name</mat-label>
+                <input type="text" required [(ngModel)]="username" placeholder="Name" matInput formControlName="Name">
+            </mat-form-field>
+
+            <mat-form-field appearance="fill">
+                <mat-label>Mobile No</mat-label>
+                <input type="number" required [(ngModel)]="mob" placeholder="Mobile No" matInput formControlName="Mobile">
+            </mat-form-field>
+        </div>
+    </div>
+    <div class="modal-footer">
+        <button id="btn1" mat-button type="button" (click)="modalRef.hide()">Cancel</button>
+        <button id="btn1" mat-button type="button" (click)="AddData()">Save</button>
+    </div>
+</ng-template>
+</form>

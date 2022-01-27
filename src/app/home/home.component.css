@@ -1,0 +1,80 @@
+.headText {
+    padding: 20px 0px 0px 45px;
+    text-align: center;
+}
+
+.headText1 {
+    padding: 0px 0px 0px 45px;
+    text-align: center;
+    opacity: 0.5;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+hr:not([size]) {
+    height: 0.2px;
+    opacity: 0.2;
+}
+
+.mat-icon {
+    margin-left: 5px;
+    font-size: 37px;
+    height: 100%;
+    vertical-align: middle;
+}
+
+.mat-card-subtitle {
+    color: black;
+}
+
+.matClass {
+    margin: 10px auto;
+    width: 60%;
+    height: 75px;
+    height: fit-content;
+    color: black;
+    background-color: white;
+}
+
+.bookBtn {
+    position: absolute;
+    right: 10%;
+    bottom: 25%;
+}
+
+.bookBtn1 {
+    position: absolute;
+    right: 10%;
+    bottom: 25%;
+    background-color: red;
+}
+
+::ng-deep.modal-content {
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    -ms-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    width: 50%;
+    border-radius: 15px;
+}
+
+.model-header {
+    padding-top: 16px;
+    text-align: center;
+    background-color: #212121;
+    color: white;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+
+}
+
+.modal-body {
+    color: white;
+    background-color: black;
+}
+
